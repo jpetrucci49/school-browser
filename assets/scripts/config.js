@@ -2,7 +2,7 @@
 
 let apiUrl
 const apiUrls = {
-  production: 'https://school-rails-api.herokuapp.com/',
+  production: 'https://school-rails-api.herokuapp.com',
   development: 'http://localhost:4741'
 }
 
