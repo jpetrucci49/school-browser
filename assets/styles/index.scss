@@ -1,1 +1,20 @@
 @import '~bootstrap/scss/bootstrap';
+
+$green: rgb(0, 255, 0);
+$red: rgb(255, 0, 0);
+
+#change-password-shell,
+#sign-out-shell,
+#new-school-shell,
+#school-list-shell,
+#schools {
+  display: none;
+}
+
+.success {
+  background-color: $green;
+}
+
+.fail {
+  background-color: $red;
+}
