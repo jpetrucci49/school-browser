@@ -57,12 +57,25 @@
       </div>
       <div class="container">
         <h1 id="message">Sign in, or create an account.</h1>
-          <div id="new-school-shell">
-            <button type="submit">New School</button>
-          </div>
-          <div id="school-list-shell">
-            <button type="submit">List All Schools</button>
-          </div>
+        <div id="new-school-shell">
+          <button type="submit">New School</button>
+        </div>
+        <div id="school-list-shell">
+          <button type="submit">List All Schools</button>
+        </div>
+        <div id="school-details-shell">
+          <form id="school-details">
+            <fieldset>
+              <legend>School Details</legend>
+              <input type="text" name="school[name]" placeholder="Name:">
+              <input type="text" name="school[address]" placeholder="Address:">
+              <input type="text" name="school[city]" placeholder="City:">
+              <input type="text" name="school[phone]" placeholder="Phone:">
+              <input type="text" name="school[zip]" placeholder="Zip:">
+              <button type="submit">Submit School</button>
+            </fieldset>
+          </form>
+        </div>
         <div id="schools">
           <div id="school" class="row">
 

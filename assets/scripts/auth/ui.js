@@ -7,6 +7,7 @@ const signIn = function () {
   $('#sign-out-shell').show()
   $('#new-school-shell').show()
   $('#school-list-shell').show()
+  $('#school-details-shell').show()
 }
 const signOut = function () {
   $('#sign-up-shell').show()
@@ -16,7 +17,8 @@ const signOut = function () {
   $('#ticTac').hide()
   $('#new-school-shell').hide()
   $('#school-list-shell').hide()
-  $('#history').hide()
+  $('#school-details-shell').hide()
+  $('#school').hide()
 }
 const removeMessage = function () {
   $('#message').removeClass()
