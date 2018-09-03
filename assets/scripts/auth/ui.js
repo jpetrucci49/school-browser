@@ -14,11 +14,10 @@ const signOut = function () {
   $('#sign-in-shell').show()
   $('#change-password-shell').hide()
   $('#sign-out-shell').hide()
-  $('#ticTac').hide()
   $('#new-school-shell').hide()
   $('#school-list-shell').hide()
   $('#school-details-shell').hide()
-  $('#school').hide()
+  $('#school').empty()
 }
 const removeMessage = function () {
   $('#message').removeClass()

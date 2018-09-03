@@ -14,6 +14,18 @@ const schoolDetails = function (data) {
   })
 }
 
+const listSchools = function () {
+  return $.ajax({
+    url: config.apiUrl + '/schools',
+    method: 'GET',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  schoolDetails
+  schoolDetails,
+  listSchools
 }

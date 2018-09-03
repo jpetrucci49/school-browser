@@ -12,8 +12,17 @@ const onSchoolDetails = function (e) {
     .catch(ui.schoolDetailsFailure)
 }
 
+const onListSchools = function (e) {
+  e.preventDefault()
+  console.log('school list clicked')
+  api.listSchools()
+    .then(ui.listSchoolsSuccess)
+    .catch(ui.listSchoolsFailure)
+}
+
 const handler = function () {
   $('#school-details').on('submit', onSchoolDetails)
+  $('#school-list-shell').on('click', onListSchools)
 }
 module.exports = {
   handler
