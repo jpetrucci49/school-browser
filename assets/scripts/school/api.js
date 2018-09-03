@@ -4,7 +4,7 @@ const store = require('./../store.js')
 
 const schoolDetails = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/schools/',
+    url: config.apiUrl + '/schools',
     method: 'POST',
     headers: {
       contentType: 'application/json',
