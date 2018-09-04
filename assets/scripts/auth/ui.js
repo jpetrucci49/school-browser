@@ -28,6 +28,7 @@ const clearData = function () {
   $('#sign-in input').val('')
   $('#change-password input').val('')
   $('#school-details input').val('')
+  $('#update-school input').val('')
 }
 const signUpSuccess = function () {
   $('#message').text('Account created!')
