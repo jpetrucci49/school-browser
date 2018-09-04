@@ -1,0 +1,34 @@
+
+  <section data-id="{{school.id}}">
+    <div>
+      <p>
+        {{#if school.name}}
+          {{school.name}}<br/>
+        {{else}}
+          Your school Name is missing.<br/>
+        {{/if}}
+        {{#if school.address}}
+          {{school.address}}<br/>
+        {{else}}
+          Your school address is missing.<br/>
+        {{/if}}
+        {{#if school.city}}
+          {{school.city}}<br/>
+        {{else}}
+          Your school City is missing.<br/>
+        {{/if}}
+        {{#if school.zip}}
+          {{school.zip}}<br/>
+        {{else}}
+          Your school zip code is missing.<br/>
+        {{/if}}
+        {{#if school.phone}}
+          {{school.phone}}<br/>
+        {{else}}
+          Your school phone number is missing.<br/>
+        {{/if}}
+      </p>
+      <button id="deleteSchoolButton">Remove this school</button><br/>
+      <button id="updateSchoolButton">Update this school</button><br/><br/>
+    </div>
+  </section>

@@ -2,6 +2,7 @@
 const store = require('./../store.js')
 const api = require('./api.js')
 const showSchools = require('../templates/list-schools.handlebars')
+const viewSchool = require('../templates/view-school.handlebars')
 
 const removeMessage = function () {
   $('#message').removeClass()
@@ -13,6 +14,7 @@ const clearData = function () {
   $('#sign-in input').val('')
   $('#change-password input').val('')
   $('#school-details input').val('')
+  $('#update-school input').val('')
 }
 
 const schoolDetailsSuccess = function () {
@@ -20,6 +22,9 @@ const schoolDetailsSuccess = function () {
   $('#message').removeClass()
   $('#message').addClass('success')
   clearData()
+  api.listSchools()
+    .then(listSchoolsSuccess)
+    .catch(failure)
   setTimeout(removeMessage, 2000)
 }
 
@@ -33,13 +38,14 @@ const schoolDetailsFailure = function () {
 
 const listSchoolsSuccess = function (response) {
   $('#school-details-shell').hide()
+  $('#submit-school').hide()
+  $('#update-school-shell').hide()
   $('#schools').show()
   $('#school').empty()
   if (response.schools.length < 1) {
     $('#message').text('You haven\'t created any schools!')
     setTimeout(removeMessage, 2000)
   } else {
-    // response.schools.forEach((school) => {
     console.log('list displaying!')
     const schoolsHTML = showSchools({ schools: response.schools })
     $('#school').append(schoolsHTML)
@@ -47,11 +53,42 @@ const listSchoolsSuccess = function (response) {
 }
 const deleteSchoolSuccess = function (response) {
   $('#message').text('That school has been deleted!')
+  setTimeout(removeMessage, 2000)
   api.listSchools()
     .then(listSchoolsSuccess)
     .catch(failure)
 }
 
+const updateSchoolSuccess = function () {
+  $('#message').text('School Updated!')
+  $('#message').removeClass()
+  $('#message').addClass('success')
+  clearData()
+  api.listSchools()
+    .then(listSchoolsSuccess)
+    .catch(failure)
+  setTimeout(removeMessage, 2000)
+}
+
+const updateSchoolFailure = function () {
+  $('#message').text('School Update Failed!')
+  $('#message').removeClass()
+  $('#message').addClass('fail')
+  clearData()
+  setTimeout(removeMessage, 2000)
+}
+
+const viewSchoolSuccess = function (response) {
+  $('#school-details-shell').hide()
+  $('#submit-school').hide()
+  $('#update-school-shell').hide()
+  $('#schools').show()
+  $('#school').empty()
+  console.log('school displaying!')
+  console.log(response)
+  const schoolsHTML = viewSchool(response)
+  $('#school').append(schoolsHTML)
+}
 const failure = function () {
   $('#message').text('There was an error')
 }
@@ -61,5 +98,8 @@ module.exports = {
   schoolDetailsFailure,
   listSchoolsSuccess,
   deleteSchoolSuccess,
+  updateSchoolSuccess,
+  updateSchoolFailure,
+  viewSchoolSuccess,
   failure
 }

@@ -35,8 +35,33 @@ const deleteSchool = function (id) {
   })
 }
 
+const updateSchool = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/schools/' + store.schoolId,
+    method: 'PATCH',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const viewSchool = function () {
+  return $.ajax({
+    url: config.apiUrl + '/schools/' + store.schoolId,
+    method: 'GET',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   schoolDetails,
   listSchools,
-  deleteSchool
+  deleteSchool,
+  updateSchool,
+  viewSchool
 }
