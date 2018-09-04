@@ -29,6 +29,22 @@ const onDeleteSchool = (event) => {
   event.preventDefault()
   const data = $(event.target).parent().parent().data('id')
   console.log('Remove School', data)
+  api.deleteSchool(data)
+    .then(ui.deleteSchoolSuccess)
+    .catch(ui.failure)
+}
+const onUpdateSchool = (event) => {
+  event.preventDefault()
+  const data = $(event.target).parent().parent().data('id')
+  console.log('Update School', data)
+  // api.deleteSchool(data)
+  //   .then(ui.deleteSchoolSuccess)
+  //   .catch(ui.failure)
+}
+const onViewSchool = (event) => {
+  event.preventDefault()
+  const data = $(event.target).parent().parent().data('id')
+  console.log('View School', data)
   // api.deleteSchool(data)
   //   .then(ui.deleteSchoolSuccess)
   //   .catch(ui.failure)
@@ -38,6 +54,8 @@ const handler = function () {
   $('#school-list-shell').on('click', onListSchools)
   $('#new-school-shell').on('click', onNewSchool)
   $('#school').on('click', '#deleteSchoolButton', onDeleteSchool)
+  $('#school').on('click', '#updateSchoolButton', onUpdateSchool)
+  $('#school').on('click', '#viewSchoolButton', onViewSchool)
 }
 module.exports = {
   handler

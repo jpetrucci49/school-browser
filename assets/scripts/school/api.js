@@ -24,8 +24,19 @@ const listSchools = function () {
     }
   })
 }
+const deleteSchool = function (id) {
+  return $.ajax({
+    url: config.apiUrl + '/schools/' + id,
+    method: 'DELETE',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
 module.exports = {
   schoolDetails,
-  listSchools
+  listSchools,
+  deleteSchool
 }

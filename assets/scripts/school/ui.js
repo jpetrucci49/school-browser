@@ -1,5 +1,6 @@
 'use strict'
 const store = require('./../store.js')
+const api = require('./api.js')
 const showSchools = require('../templates/list-schools.handlebars')
 
 const removeMessage = function () {
@@ -31,17 +32,24 @@ const schoolDetailsFailure = function () {
 }
 
 const listSchoolsSuccess = function (response) {
+  $('#school-details-shell').hide()
+  $('#schools').show()
+  $('#school').empty()
   if (response.schools.length < 1) {
     $('#message').text('You haven\'t created any schools!')
+    setTimeout(removeMessage, 2000)
   } else {
-    $('#school-details-shell').hide()
-    $('#schools').show()
-    $('#school').empty()
     // response.schools.forEach((school) => {
     console.log('list displaying!')
     const schoolsHTML = showSchools({ schools: response.schools })
     $('#school').append(schoolsHTML)
   }
+}
+const deleteSchoolSuccess = function (response) {
+  $('#message').text('That school has been deleted!')
+  api.listSchools()
+    .then(listSchoolsSuccess)
+    .catch(failure)
 }
 
 const failure = function () {
@@ -52,5 +60,6 @@ module.exports = {
   schoolDetailsSuccess,
   schoolDetailsFailure,
   listSchoolsSuccess,
+  deleteSchoolSuccess,
   failure
 }
