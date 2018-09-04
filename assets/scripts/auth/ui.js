@@ -16,6 +16,7 @@ const signOut = function () {
   $('#new-school-shell').hide()
   $('#school-list-shell').hide()
   $('#school-details-shell').hide()
+  $('#update-school-shell').hide()
   $('#school').empty()
 }
 const removeMessage = function () {
