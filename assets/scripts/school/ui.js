@@ -1,5 +1,6 @@
 'use strict'
 const store = require('./../store.js')
+const showSchools = require('../templates/list-schools.handlebars')
 
 const removeMessage = function () {
   $('#message').removeClass()
@@ -10,6 +11,7 @@ const clearData = function () {
   $('#sign-up input').val('')
   $('#sign-in input').val('')
   $('#change-password input').val('')
+  $('#school-details input').val('')
 }
 
 const schoolDetailsSuccess = function () {
@@ -29,27 +31,20 @@ const schoolDetailsFailure = function () {
 }
 
 const listSchoolsSuccess = function (response) {
-  $('#schools').show()
-  $('#school').html('')
-  response.schools.forEach((school) => {
-    console.log('list displaying!')
-    const schoolsHTML = `
-      <p>
-        ID: ${school.id}<br>
-        Name: ${school.name}<br>
-        City: ${school.city}<br>
-        User: ${school.user}<br>
-        UserId: ${school.user.id}<br>
-      </p>
-    `
-    $('#school').append(schoolsHTML)
-  })
   if (response.schools.length < 1) {
     $('#message').text('You haven\'t created any schools!')
+  } else {
+    $('#school-details-shell').hide()
+    $('#schools').show()
+    $('#school').empty()
+    // response.schools.forEach((school) => {
+    console.log('list displaying!')
+    const schoolsHTML = showSchools({ schools: response.schools })
+    $('#school').append(schoolsHTML)
   }
 }
 
-const listSchoolsFailure = function () {
+const failure = function () {
   $('#message').text('There was an error')
 }
 
@@ -57,5 +52,5 @@ module.exports = {
   schoolDetailsSuccess,
   schoolDetailsFailure,
   listSchoolsSuccess,
-  listSchoolsFailure
+  failure
 }

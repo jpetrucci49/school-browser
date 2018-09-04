@@ -17,12 +17,27 @@ const onListSchools = function (e) {
   console.log('school list clicked')
   api.listSchools()
     .then(ui.listSchoolsSuccess)
-    .catch(ui.listSchoolsFailure)
+    .catch(ui.failure)
 }
-
+const onNewSchool = function () {
+  console.log('New school clicked')
+  $('#school-details-shell').show()
+  $('#schools').hide()
+  $('#school').empty()
+}
+const onDeleteSchool = (event) => {
+  event.preventDefault()
+  const data = $(event.target).parent().parent().data('id')
+  console.log('Remove School', data)
+  // api.deleteSchool(data)
+  //   .then(ui.deleteSchoolSuccess)
+  //   .catch(ui.failure)
+}
 const handler = function () {
   $('#school-details').on('submit', onSchoolDetails)
   $('#school-list-shell').on('click', onListSchools)
+  $('#new-school-shell').on('click', onNewSchool)
+  $('#school').on('click', '#deleteSchoolButton', onDeleteSchool)
 }
 module.exports = {
   handler

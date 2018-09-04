@@ -7,7 +7,6 @@ const signIn = function () {
   $('#sign-out-shell').show()
   $('#new-school-shell').show()
   $('#school-list-shell').show()
-  $('#school-details-shell').show()
 }
 const signOut = function () {
   $('#sign-up-shell').show()
@@ -27,6 +26,7 @@ const clearData = function () {
   $('#sign-up input').val('')
   $('#sign-in input').val('')
   $('#change-password input').val('')
+  $('#school-details input').val('')
 }
 const signUpSuccess = function () {
   $('#message').text('Account created!')
