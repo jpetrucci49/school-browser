@@ -14,7 +14,7 @@ https://github.com/jpetrucci49/school-rails-api
 My plan for coding this API project was to segment it into different features to implement. Firstly, login functionality including sign in, sign up, change password and sign out. Secondly, add a new table to the database for users to add schools. Finally, to implement form handlers for user submissions and CRUD requests.
 
 # User stories:
-
+tags.
 Version 1:
 As a user, I want to view a single school created
 As a user, I want to view all my schools
