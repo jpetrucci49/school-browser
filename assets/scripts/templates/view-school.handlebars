@@ -1,34 +1,33 @@
 
   <section data-id="{{school.id}}">
-    <div>
-      <p>
-        {{#if school.name}}
-          {{school.name}}<br/>
-        {{else}}
-          Your school Name is missing.<br/>
-        {{/if}}
-        {{#if school.address}}
-          {{school.address}}<br/>
-        {{else}}
-          Your school address is missing.<br/>
-        {{/if}}
-        {{#if school.city}}
-          {{school.city}}<br/>
-        {{else}}
-          Your school City is missing.<br/>
-        {{/if}}
-        {{#if school.zip}}
-          {{school.zip}}<br/>
-        {{else}}
-          Your school zip code is missing.<br/>
-        {{/if}}
-        {{#if school.phone}}
-          {{school.phone}}<br/>
-        {{else}}
-          Your school phone number is missing.<br/>
-        {{/if}}
-      </p>
-      <button id="deleteSchoolButton">Remove this school</button><br/>
-      <button id="updateSchoolButton">Update this school</button><br/><br/>
-    </div>
+    <table class="table-sm">
+      <tbody>
+        <tr>
+          <th scope="row">Name:&nbsp;</th>
+          <td>{{school.name}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Address:&nbsp;</th>
+          <td>{{school.address}}</td>
+        </tr>
+        <tr>
+          <th scope="row">City:&nbsp;</th>
+          <td>{{school.city}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Zip:&nbsp;</th>
+          <td>{{school.zip}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Phone:&nbsp;</th>
+          <td>{{school.phone}}</td>
+        </tr>
+        <tr>
+          <td colspan="2"><button id="deleteSchoolButton">Remove this school</button></td>
+        </tr>
+        <tr>
+          <td colspan="2"><button id="updateSchoolButton">Update this school</button></td>
+        </tr>
+      </tbody>
+    </table>
   </section>

@@ -1,32 +1,30 @@
 {{#each schools as |school|}}
   <section data-id="{{school.id}}">
-    <div class="row">
-      <div>
-        Name:&nbsp;
-      </div>
-      <div>
-        {{school.name}}
-      </div>
-    </div>
-    <div class="row">
-      <div>
-        Address:&nbsp;
-      </div>
-      <div>
-        {{school.address}}
-      </div>
-    </div>
-    <div class="row">
-      <div>
-        City:&nbsp;
-      </div>
-      <div>
-        {{school.city}}
-      </div>
-    </div>
-    <button id="deleteSchoolButton">Remove this school</button><br/>
-    <button id="updateSchoolButton">Update this school</button><br/>
-    <button id="viewSchoolButton">View this school</button><br/><br/>
+    <table class="table-sm">
+      <tbody>
+        <tr>
+          <th scope="row">Name:&nbsp;</th>
+          <td>{{school.name}}</td>
+        </tr>
+        <tr>
+          <th scope="row">Address:&nbsp;</th>
+          <td>{{school.address}}</td>
+        </tr>
+        <tr>
+          <th scope="row">City:&nbsp;</th>
+          <td>{{school.city}}</td>
+        </tr>
+        <tr>
+          <td colspan="2"><button id="deleteSchoolButton">Remove this school</button></td>
+        </tr>
+        <tr>
+          <td colspan="2"><button id="updateSchoolButton">Update this school</button></td>
+        </tr>
+        <tr>
+          <td colspan="2"><button id="viewSchoolButton">View this school</button></td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
 {{/each}}
