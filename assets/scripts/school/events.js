@@ -56,8 +56,8 @@ const onViewSchool = (e) => {
 const handler = function () {
   $('#school-details').on('submit', onSchoolDetails)
   $('#update-school').on('submit', onUpdateSchool)
-  $('#school-list-shell').on('click', onListSchools)
-  $('#new-school-shell').on('click', onNewSchool)
+  $('#school-list').on('click', onListSchools)
+  $('#new-school').on('click', onNewSchool)
   $('#school').on('click', '#deleteSchoolButton', onDeleteSchool)
   $('#school').on('click', '#updateSchoolButton', updateSchool)
   $('#school').on('click', '#viewSchoolButton', onViewSchool)
