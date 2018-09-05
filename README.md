@@ -5,9 +5,14 @@ Technologies used in this project include HTML, SASS, Javascript, jQuery, Handle
 This client connects to my heroku database where a user can store information on their local schools
 using Ruby on Rails.
 
-# Heroku API:
+# Heroku API Repo:
 
 https://github.com/jpetrucci49/school-rails-api
+
+## Live Sites:
+
+https://school-rails-api.herokuapp.com/schools \
+https://jpetrucci49.github.io/school-browser
 
 ## Planning
 
@@ -59,7 +64,7 @@ As a user, I want a teacher to have many students \
 
 ### Wireframe:
 
-![alt text](./public/0830180905.jpg)
+![Wireframe image](./public/0830180905.jpg)
 
 ## [License](LICENSE)
 
