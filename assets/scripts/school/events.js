@@ -26,14 +26,14 @@ const onNewSchool = function () {
 }
 const onDeleteSchool = (e) => {
   e.preventDefault()
-  const id = $(e.target).parent().parent().data('id')
+  const id = $(e.target).parent().data('id')
   api.deleteSchool(id)
     .then(ui.deleteSchoolSuccess)
     .catch(ui.failure)
 }
 const updateSchool = (e) => {
   e.preventDefault()
-  store.schoolId = $(e.target).parent().parent().data('id')
+  store.schoolId = $(e.target).parent().data('id')
   $('#school-details-shell').hide()
   $('#update-school-shell').show()
   $('#schools').hide()
@@ -48,7 +48,7 @@ const onUpdateSchool = (e) => {
 }
 const onViewSchool = (e) => {
   e.preventDefault()
-  store.schoolId = $(e.target).parent().parent().data('id')
+  store.schoolId = $(e.target).parent().data('id')
   api.viewSchool()
     .then(ui.viewSchoolSuccess)
     .catch(ui.failure)

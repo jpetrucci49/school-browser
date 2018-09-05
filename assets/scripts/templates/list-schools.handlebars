@@ -1,27 +1,32 @@
 {{#each schools as |school|}}
   <section data-id="{{school.id}}">
-    <div>
-      <p>
-        {{#if school.name}}
-          {{school.name}}<br/>
-        {{else}}
-          Your school Name is missing.<br/>
-        {{/if}}
-        {{#if school.address}}
-          {{school.address}}<br/>
-        {{else}}
-          Your school address is missing.<br/>
-        {{/if}}
-        {{#if school.city}}
-          {{school.city}}<br/>
-        {{else}}
-          Your school City is missing.<br/>
-        {{/if}}
-      </p>
-      <button id="deleteSchoolButton">Remove this school</button><br/>
-      <button id="updateSchoolButton">Update this school</button><br/>
-      <button id="viewSchoolButton">View this school</button><br/><br/>
+    <div class="row">
+      <div>
+        Name:&nbsp;
+      </div>
+      <div>
+        {{school.name}}
+      </div>
     </div>
+    <div class="row">
+      <div>
+        Address:&nbsp;
+      </div>
+      <div>
+        {{school.address}}
+      </div>
+    </div>
+    <div class="row">
+      <div>
+        City:&nbsp;
+      </div>
+      <div>
+        {{school.city}}
+      </div>
+    </div>
+    <button id="deleteSchoolButton">Remove this school</button><br/>
+    <button id="updateSchoolButton">Update this school</button><br/>
+    <button id="viewSchoolButton">View this school</button><br/><br/>
   </section>
 
 {{/each}}
