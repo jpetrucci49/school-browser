@@ -46,7 +46,6 @@ const listSchoolsSuccess = function (response) {
     $('#message').text('You haven\'t created any schools!')
     setTimeout(removeMessage, 2000)
   } else {
-    console.log('list displaying!')
     const schoolsHTML = showSchools({ schools: response.schools })
     $('#school').append(schoolsHTML)
   }
@@ -84,8 +83,6 @@ const viewSchoolSuccess = function (response) {
   $('#update-school-shell').hide()
   $('#schools').show()
   $('#school').empty()
-  console.log('school displaying!')
-  console.log(response)
   const schoolsHTML = viewSchool(response)
   $('#school').append(schoolsHTML)
 }
