@@ -18,11 +18,15 @@ https://jpetrucci49.github.io/school-browser
 
 My plan for coding this API project was to segment it into different features to implement. Firstly, login functionality including sign in, sign up, change password and sign out. Secondly, add a new table to the database for users to add schools. Finally, to implement form handlers for user submissions and CRUD requests.
 
+### Unsolved Issues:
+
+I believe the layout is still very vanilla. I can certainly add more Sass for a more pleasing visuals. Transitions or fades for notices. Spacers to keep content from jumping up and down on the page. 
+
 # User stories:
 
 Version 1: \
 As a user, I want to view a single school created \
-As a user, I want to  view all my schools \
+As a user, I want to view all my schools \
 As a user, I want to create a school with a name, address, city, phone and zip \
 As a user, I want to edit a school's name, address, city, phone and zip \
 As a user, I want to delete a school \
